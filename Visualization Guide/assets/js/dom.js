@@ -4,7 +4,7 @@ var keylines = document.querySelector(".dv-hero-keylines");
 keylines.setAttribute('data-scroll', '');
 
 ScrollOut({
-    onShown: function(keylines) {
+    onShown: function (keylines) {
         // remove the class
         keylines.classList.remove("animation-go");
 
@@ -24,7 +24,7 @@ var headline = document.querySelector(".dv-hero-headline");
 headline.setAttribute('data-scroll', '');
 
 ScrollOut({
-    onShown: function(headline) {
+    onShown: function (headline) {
         // remove the class
         headline.classList.remove("animation-go");
 
@@ -36,3 +36,23 @@ ScrollOut({
     }
 
 });
+
+/*Animation - About - Load Chart */
+
+var chart = document.querySelector(".chart");
+chart.setAttribute('data-scroll', '');
+
+ScrollOut({
+    onShown: function (chart) {
+        // remove the class
+        chart.classList.remove("loaded");
+
+        // force reflow
+        void chart.offsetWidth;
+
+        // re-add the animated cl
+        chart.classList.add("loaded");
+    }
+
+});
+
