@@ -1,41 +1,40 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
     AOS.init();
 
 
     /** Parallax effect */
-    var rellax = new Rellax('.rellax');
-
+    var rellax = new Rellax('.rellax', {
+        center: true
+    });
     /** Scroll Magic */
     var controller = new ScrollMagic.Controller();
 
-    var revealElements = document.getElementsByClassName("dv-block-line");
-    for (var i = 0; i < revealElements.length; i++) { // create a scene for each element
+    var lineSlide = document.getElementsByClassName("dv-block-line");
+    for (var i = 0; i < lineSlide.length; i++) { // create a scene for each element
         new ScrollMagic.Scene({
-                triggerElement: revealElements[i], // y value not modified, so we can use element as trigger as well
-                offset: 150, // start a little later
-                triggerHook: 0.9,
-                duration: "100%"
+            triggerElement: lineSlide[i], // y value not modified, so we can use element as trigger as well
+            offset: 150, // start a little later
+            triggerHook: 0.9,
+            duration: "100%"
 
-            })
-            .setClassToggle(revealElements[i], "visible") // add class toggle
-            .addIndicators() // add indicators (requires plugin)
+        })
+            .setClassToggle(lineSlide[i], "visible") // add class toggle
             .addTo(controller);
     }
 
-    var revealElements = document.getElementsByClassName("dv-clr-block__wrapper");
-    for (var i = 0; i < revealElements.length; i++) { // create a scene for each element
+    var revealBlocks = document.getElementsByClassName("dv-clr-block__wrapper");
+    for (var i = 0; i < revealBlocks.length; i++) { // create a scene for each element
         new ScrollMagic.Scene({
-                triggerElement: revealElements[i], // y value not modified, so we can use element as trigger as well
-                offset: -200, // start a little later
-                triggerHook: 0.9,
-            })
-            .setClassToggle(revealElements[i], "reveal") // add class toggle
-            .addIndicators() // add indicators (requires plugin)
+            triggerElement: revealBlocks[i], // y value not modified, so we can use element as trigger as well
+            offset: -200, // start a little later
+            triggerHook: 0.9,
+        })
+            .setClassToggle(revealBlocks[i], "reveal") // add class toggle
             .addTo(controller);
     }
 
-    (function($) {
+    (function ($) {
 
         // scroll functions
         var divs = $('div[id^="pos-content-"]').hide(),
@@ -46,13 +45,16 @@ $(document).ready(function() {
             divs.eq(i).fadeIn(400)
                 .css({ position: 'relative' })
                 .css({
-                    transition: 'opacity 1s ease-in-out'
+                    transition: 'opacity 2s ease-in-out'
                 })
-                .delay(1000)
+                .delay(1200)
                 .fadeOut(400, cycle)
-                .css({ "animation": "keylinesCycle 2s 1" });
+                .css({ "animation": "keylinesCycle 2s 1 forwards" })
+                .css({ "animation - iteration - count": "2" })
+                ;
             i = ++i % divs.length;
         })();
     })(jQuery);
+
 
 });
