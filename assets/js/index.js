@@ -7,6 +7,7 @@ $(document).ready(function () {
     var rellax = new Rellax('.rellax', {
         center: true,
         speed: -4,
+        vertical: true
     });
     /** Scroll Magic */
     var controller = new ScrollMagic.Controller();
