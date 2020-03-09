@@ -5,7 +5,8 @@ $(document).ready(function () {
 
     /** Parallax effect */
     var rellax = new Rellax('.rellax', {
-        center: true
+        center: true,
+        speed: -4,
     });
     /** Scroll Magic */
     var controller = new ScrollMagic.Controller();
