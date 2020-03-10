@@ -414,7 +414,7 @@ section {
     z-index: 5;
 }
 
-.dv-cardcard {
+.dv-card {
     background-color: #fff;
     width: 200px;
     height: 160px;
@@ -515,8 +515,8 @@ section {
     opacity: .9;
     background-color: rgba(255, 255, 255, 0.1);
     box-shadow: 4px 12px 47px 0 rgba(0, 0, 0, .1);
-    -webkit-animation: 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) shadow 2;
-    animation: 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) shadow 2;
+    /**-webkit-animation: 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) shadow 2;
+    /**animation: 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) shadow 2;**/
 }
 
 .section--featured .ItemCard__thumb img {
@@ -528,8 +528,8 @@ section {
     transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), -webkit-transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
     -webkit-transform: translate3d(0, 0, 20px);
     transform: translate3d(0, 0, 20px);
-    -webkit-animation: 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) levitate 2;
-    animation: 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) levitate 2;
+    /**-webkit-animation: 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) levitate 2;
+    /**animation: 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) levitate 2;**/
 }
 
 .section--featured .column:hover .ItemCard__dest {
@@ -1348,7 +1348,7 @@ section {
 
 .f-blob {
     position: absolute;
-    z-index: 1;
+    z-index: 0;
     height: 200px;
     width: 200px;
     transform: translateX(-100px);
@@ -1358,7 +1358,7 @@ section {
 
 .f-blob2 {
     position: absolute;
-    z-index: 1;
+    z-index: 0;
     border-radius: .2857rem;
     height: 340px;
     width: 340px;
@@ -1368,7 +1368,7 @@ section {
 
 .f-blob3 {
     position: absolute;
-    z-index: 1;
+    z-index: 0;
     border-radius: .2857rem;
     height: 380px;
     width: 380px;
@@ -1378,8 +1378,7 @@ section {
 
 .f-blob4 {
     position: absolute;
-    z-index: 1;
-
+    z-index: 0;
     border-radius: .2857rem;
     height: 300px;
     width: 300px;
@@ -1387,19 +1386,30 @@ section {
     grid-row: 6;
 }
 
+.f-blob5 {
+    position: absolute;
+    z-index: 0;
+    border-radius: .2857rem;
+    height: 200px;
+    width: 200px;
+    grid-column: 9;
+    grid-row: 6;
+}
+
 .gapp-logo {
     margin: 20px;
-    height: 150px;
-    width: 150px;
+    height: auto;
+    width: 60px;
     grid-column: 9;
     grid-row: 4;
     z-index: 10;
+
 }
 
 .pbx-logo {
     margin: 20px;
     height: auto;
-    width: 150px;
+    width: 60px;
     grid-column: 2;
     grid-row: 5;
 }
@@ -1408,29 +1418,34 @@ section {
     margin: 20px;
     height: auto;
     width: 150px;
-    grid-column: 7;
+    grid-column: 6;
     grid-row: 6;
 }
 
 .card-wrapper__place {
-    grid-column: 8/12;
+    display: flex;
+    flex-direction: row;
+    grid-column: 8/14;
     grid-row: 4/12;
 }
 
 .Card {
-    background-color: #fff;
+    margin: 15px;
+    background-color: #00D084;
     border-radius: 10px;
     box-shadow: 4px 12px 47px 0 rgba(0, 0, 0, .1);
-    display: -webkit-box;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     flex-direction: column;
-    height: auto;
+    height: 180px;
     width: 200px;
     overflow-wrap: break-word;
     padding: 24px;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-decoration: none;
     transition-duration: .25s;
     transition-property: background-color,
@@ -1440,4 +1455,14 @@ section {
     transition-property: transform,
         background-color,
         -webkit-transform;
+}
+
+.Card.red {
+    background-color: #ff4f4f;
+
+}
+
+.Card.blue {
+    background-color: #fff;
+
 }
