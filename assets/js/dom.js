@@ -45,7 +45,6 @@ chart.setAttribute('data-scroll', '');
 ScrollOut({
     onShown: function (chart) {
         // remove the class
-        chart.classList.remove("loaded");
 
         // force reflow
         void chart.offsetWidth;
@@ -57,3 +56,20 @@ ScrollOut({
 });
 
 
+
+var circle = document.querySelector(".color-circle");
+circle.setAttribute('data-scroll', '');
+
+ScrollOut({
+    onShown: function (circle) {
+        circle.classList.remove("motion");
+        // remove the class
+
+        // force reflow
+        void circle.offsetWidth;
+
+        // re-add the animated cl
+        circle.classList.add("motion");
+    }
+
+});
