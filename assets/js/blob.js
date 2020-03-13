@@ -1,4 +1,4 @@
-const box = document.querySelector(".blob");
+/**const box = document.querySelector(".blob");
 
 
 
@@ -18,3 +18,4 @@ function getRandomValue() {
     return Math.floor(Math.random() * 200) + 200;
 }
 
+**/

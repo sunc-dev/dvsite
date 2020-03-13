@@ -3,10 +3,13 @@ $(document).ready(function () {
     AOS.init();
 
 
+    /** Initialzie smooth mousewheel scrolling */
+
+
     /** Parallax effect */
     var rellax = new Rellax('.rellax', {
         center: true,
-        speed: -4,
+        speed: -7,
         vertical: true
     });
     /** Scroll Magic */
