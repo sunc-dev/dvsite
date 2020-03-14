@@ -180,17 +180,17 @@ section {
 }
 
 .dv-bg-obj__curved {
-    height: 20vw;
+    height: 25vw;
     background-color: #130f40;
-    border-radius: 0 0 0 90%;
+    border-radius: 0 0 0 50%;
     grid-column: 1/13;
-    grid-row: 10/12;
+    grid-row: 8/11;
 }
 
 .dv-bg-panel__obj {
     position: absolute;
-    height: 90vh;
-    width: 500px;
+    height: 100vh;
+    width: 450px;
     background-color: #00D084;
     z-index: 4;
     transform: scaleY(0);
@@ -238,7 +238,7 @@ section {
 
 .obj_pos-tl {
     grid-column: 2/4;
-    grid-row: 3/4;
+    grid-row: 6/7;
     z-index: 4;
 }
 
@@ -249,7 +249,8 @@ section {
 }
 
 .obj_pos-mr {
-    grid-column: 9/11;
+    justify-self: center;
+    grid-column: 8/12;
     grid-row: 5/7;
     z-index: 4;
 }
@@ -276,8 +277,8 @@ section {
 
 .circle-style__mr {
     background-color: #EE5A24;
-    height: 200px;
-    width: 200px;
+    height: 220px;
+    width: 220px;
 }
 
 .c-expand {
@@ -356,6 +357,8 @@ section {
 /**Hero Main Elements**/
 #hero {
     display: grid;
+    background-color: #1e3799;
+
 }
 
 .dv-hero {
@@ -578,6 +581,11 @@ section {
 }
 
 @media screen and (max-width:480px) {
+    .dv-bg-panel__obj {
+        height: 70vh;
+        width: 250px;
+    }
+
     .dv-hero {
         height: 70vh;
         margin: 0 2rem;
@@ -589,16 +597,51 @@ section {
     }
 
     .dv-hero__wrapper h1 span {
-        font-size: 2.225rem;
-        line-height: 1.6rem;
+        font-size: 3.225rem;
+        line-height: 2.6rem;
     }
 
     .dv-hero__wrapper h4 {
-        font-size: 1.025rem;
+        font-size: 1.625rem;
     }
 
     .dv-bg-panel__obj {
         height: 60vh;
         width: 250px;
     }
+
+    .obj_pos-tl {
+        grid-column: 2/4;
+        grid-row: 2/5;
+        z-index: 4;
+    }
+
+    .obj_pos-bc {
+        grid-column: 4/6;
+        grid-row: 9/11;
+        z-index: 4;
+    }
+
+    .obj_pos-mr {
+        justify-self: center;
+        grid-column: 8/12;
+        grid-row: 5/7;
+        z-index: 4;
+    }
+
+    .circle-style__tl {
+        height: 75px;
+        width: 75px;
+    }
+
+    .circle-style__bc {
+        height: 50px;
+        width: 50px;
+    }
+
+    .circle-style__mr {
+        height: 110px;
+        width: 110px;
+    }
+
 }
