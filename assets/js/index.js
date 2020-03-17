@@ -1,3 +1,6 @@
+new SimpleBar(document.getElementById('scrollable-wrapper'), { autoHide: true });
+
+
 $(document).ready(function () {
 
     AOS.init();
