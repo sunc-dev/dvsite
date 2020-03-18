@@ -1,4 +1,44 @@
 @font-face {
+    font-family: 'Galano Regular';
+    src: url('../fonts/Galano Grotesque.otf') format("opentype");
+}
+
+
+@font-face {
+    font-family: 'Galano Thin';
+    src: url('../fonts/Galano Grotesque Thin.otf') format("opentype");
+}
+
+@font-face {
+    font-family: 'Galano Light';
+    src: url('../fonts/Galano Grotesque Light.otf') format("opentype");
+}
+
+
+@font-face {
+    font-family: 'Galano Medium';
+    src: url('../fonts/Galano Grotesque Medium.otf') format("opentype");
+}
+
+
+@font-face {
+    font-family: 'Galano Bold';
+    src: url('../fonts/Galano Grotesque Bold.otf') format("opentype");
+}
+
+
+@font-face {
+    font-family: 'Galano Heavy';
+    src: url('../fonts/Galano Grotesque Heavy.otf') format("opentype");
+}
+
+@font-face {
+    font-family: 'Galano Black';
+    src: url('../fonts/Galano Grotesque Black.otf') format("opentype");
+}
+
+
+@font-face {
     font-family: 'Product Sans Regular';
     src: url('../fonts/ProductSans-Regular.woff') format('woff');
     font-weight: normal;
@@ -33,30 +73,32 @@
     font-style: normal;
 }
 
-html {
-    box-sizing: border-box;
-}
 
+
+
+html,
 body {
+    box-sizing: border-box;
     margin: 0;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
-    font-family: "Product Sans", "Roboto", sans-serif;
-    overflow-x: hidden;
+    font-family: "Galano Regular", "Roboto", sans-serif;
+    width: 100vw;
+    height: 100vh
 }
 
 h1,
 h2,
 h3 {
-    font-family: "Product Sans Black Regular", "Roboto", sans-serif;
+    font-family: "Galano Medium", "Roboto", sans-serif;
     letter-spacing: 1.5px;
     margin: 0;
 }
 
 h1 {
-    font-size: 5.225rem;
+    font-size: 5.525rem;
 }
 
 h2 {
@@ -96,6 +138,65 @@ section {
     padding: 0 0 4.25rem 0;
 }
 
+/*Locomotive Scrolling*/
+html.has-scroll-smooth {
+    overflow: hidden;
+}
+
+html.has-scroll-dragging {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.has-scroll-smooth body {
+    overflow: hidden;
+}
+
+.has-scroll-smooth [data-scroll-container] {
+    min-height: 100vh;
+}
+
+.c-scrollbar {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 11px;
+    height: 100vh;
+    transform-origin: center right;
+    transition: transform 0.3s, opacity 0.3s;
+    opacity: 0;
+}
+
+.c-scrollbar:hover {
+    transform: scaleX(1.45);
+}
+
+.c-scrollbar:hover,
+.has-scroll-scrolling .c-scrollbar,
+.has-scroll-dragging .c-scrollbar {
+    opacity: 1;
+}
+
+.c-scrollbar_thumb {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: black;
+    opacity: 0.5;
+    width: 7px;
+    border-radius: 10px;
+    margin: 2px;
+    cursor: -webkit-grab;
+    cursor: grab;
+}
+
+.has-scroll-dragging .c-scrollbar_thumb {
+    cursor: -webkit-grabbing;
+    cursor: grabbing;
+}
+
 
 /*Formats*/
 
@@ -117,9 +218,6 @@ section {
 
 /**Styles**/
 
-.simplebar-track .simplebar-scrollbar {
-    box-shadow: 0 0 1px 1px hsla(0, 0%, 100%, .25);
-}
 
 .highlight {
     font-weight: 600;
@@ -205,7 +303,7 @@ section {
     -webkit-animation: panelScale;
     animation: panelScale;
     -webkit-animation-duration: 600ms;
-    animation-duration: 600ms;
+    animation-duration: 700ms;
     -webkit-animation-fill-mode: forwards;
     -webkit-transition: all .6s cubic-bezier(0.19, 1, 0.22, 1);
     -moz-transition: all .6s cubic-bezier(0.19, 1, 0.22, 1);
@@ -231,7 +329,6 @@ section {
 @keyframes panelScale {
     0% {
         transform: scaleY(0);
-        opacity: 0
     }
 
     100% {
@@ -253,7 +350,7 @@ section {
 .placement__tl {
     grid-column: 2/3;
     grid-row: 1/6;
-    z-index: 4;
+    z-index: 5;
 }
 
 .placement__bc {
@@ -320,12 +417,12 @@ section {
 
 .timing-bc {
     -webkit-animation-delay: 1700ms;
-    animation-delay: 1700ms;
+    animation-delay: 1500ms;
 }
 
 .timing-mr {
     -webkit-animation-delay: 2000ms;
-    animation-delay: 2000ms;
+    animation-delay: 1600ms;
 }
 
 
@@ -387,7 +484,9 @@ section {
     align-items: center;
     color: #fff;
     grid-column: 1/13;
-    grid-row: 1/12
+    grid-row: 1/12;
+    z-index: 10;
+
 }
 
 .dv-hero__wrapper {
@@ -428,7 +527,6 @@ section {
 
 .dv-text-block {
     position: absolute;
-    background-color: #130f40;
     width: 100%;
     height: 100%;
     z-index: 3;
@@ -446,18 +544,18 @@ section {
     -o-transition: all .6s cubic-bezier(0.19, 1, 0.22, 1);
     transition: all .6s cubic-bezier(0.19, 1, 0.22, 1);
     animation-fill-mode: forwards;
-    -webkit-animation-delay: 500ms;
-    animation-delay: 500ms
-}
-
-#hero .dv-hero-keylines.animation-go span:nth-of-type(2) {
     -webkit-animation-delay: 700ms;
     animation-delay: 700ms
 }
 
-#hero .dv-hero-keylines.animation-go span:nth-of-type(3) {
+#hero .dv-hero-keylines.animation-go span:nth-of-type(2) {
     -webkit-animation-delay: 900ms;
     animation-delay: 900ms
+}
+
+#hero .dv-hero-keylines.animation-go span:nth-of-type(3) {
+    -webkit-animation-delay: 1100ms;
+    animation-delay: 1100ms
 }
 
 @-webkit-keyframes keylinesRise {
@@ -493,7 +591,7 @@ section {
 }
 
 .dv-hero-headline h4 {
-    font-family: "Roboto";
+    font-family: "Galano Regular";
     z-index: 10;
     opacity: 0;
     font-size: 1.825rem;
@@ -508,7 +606,7 @@ section {
     animation-fill-mode: forwards;
     -webkit-animation-delay: 100ms;
     transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
-    animation-delay: 1000ms;
+    animation-delay: 1300ms;
     letter-spacing: 2px;
 }
 

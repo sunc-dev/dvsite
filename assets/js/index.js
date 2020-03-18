@@ -1,5 +1,3 @@
-new SimpleBar(document.getElementById('scrollable-wrapper'), { autoHide: true });
-
 
 $(document).ready(function () {
 
@@ -10,13 +8,37 @@ $(document).ready(function () {
 
 
     /** Parallax effect */
-    var rellax = new Rellax('.rellax', {
-        center: true,
-        speed: -7,
-        vertical: true
-    });
+
     /** Scroll Magic */
     var controller = new ScrollMagic.Controller();
+
+    var lineSlide = document.getElementsByClassName("dv-hero-keylines");
+    for (var i = 0; i < lineSlide.length; i++) { // create a scene for each element
+        new ScrollMagic.Scene({
+            triggerElement: lineSlide[i], // y value not modified, so we can use element as trigger as well
+            offset: -150, // start a little later
+            triggerHook: 0.9,
+            duration: "150%"
+
+        })
+            .setClassToggle(lineSlide[i], "animation-go") // add class toggle
+            .addTo(controller);
+    }
+
+    var lineSlide = document.getElementsByClassName("dv-hero-headline");
+    for (var i = 0; i < lineSlide.length; i++) { // create a scene for each element
+        new ScrollMagic.Scene({
+            triggerElement: lineSlide[i], // y value not modified, so we can use element as trigger as well
+            offset: -50, // start a little later
+            triggerHook: 0.9,
+            duration: "100%"
+
+        })
+            .setClassToggle(lineSlide[i], "animation-go") // add class toggle
+            .addTo(controller);
+    }
+
+
 
     var lineSlide = document.getElementsByClassName("dv-block-line");
     for (var i = 0; i < lineSlide.length; i++) { // create a scene for each element
