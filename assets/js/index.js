@@ -29,7 +29,7 @@ $(document).ready(function () {
     for (var i = 0; i < lineSlide.length; i++) { // create a scene for each element
         new ScrollMagic.Scene({
             triggerElement: lineSlide[i], // y value not modified, so we can use element as trigger as well
-            offset: -50, // start a little later
+            offset: -0, // start a little later
             triggerHook: 0.9,
             duration: "100%"
 

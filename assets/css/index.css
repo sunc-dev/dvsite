@@ -98,7 +98,7 @@ h3 {
 }
 
 h1 {
-    font-size: 5.525rem;
+    font-size: 8.525rem;
 }
 
 h2 {
@@ -231,11 +231,11 @@ html.has-scroll-dragging {
 }
 
 .dv-block-line {
-    height: 7%;
+    height: 20%;
     position: absolute;
     background-color: #00D084;
     opacity: .99;
-    width: 280px;
+    width: 450px;
     z-index: 1;
     -webkit-transform: scaleX(0);
     -moz-transform: scaleX(0);
@@ -272,7 +272,7 @@ html.has-scroll-dragging {
 .dv-bg__wrapper {
     position: absolute;
     display: flex;
-    background-color: #130f40;
+    background-color: #2c2c54;
     height: 70vh;
     width: 100%;
     justify-content: flex-end;
@@ -283,7 +283,7 @@ html.has-scroll-dragging {
 
 .dv-bg-obj__curved {
     height: 15vw;
-    background-color: #130f40;
+    background-color: #2c2c54;
     border-radius: 0 0 0 50%;
     grid-column: 1/13;
     grid-row: 8/11;
@@ -467,10 +467,132 @@ html.has-scroll-dragging {
     }
 }
 
+/**Button components**/
+
+.btn-wrapper {
+    margin-top: 2.5rem;
+    position: relative;
+}
+
+.dv-btn {
+    margin: 0;
+    overflow: hidden;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-content: flex-start;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: flex-start;
+    height: 100%;
+    z-index: 20;
+    grid-column: 8/12;
+    grid-row: 3/6;
+}
+
+
+.btn {
+    display: inline-block;
+    position: relative;
+    height: 4.0rem;
+    padding: 0 3rem;
+    text-align: center;
+    font-family: "Galano Medium", "Roboto";
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 3.6rem;
+    background: none;
+    letter-spacing: 1.1px;
+    border: none;
+    border-radius: 2.6rem;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+.btn--cta {
+    overflow: hidden;
+    z-index: 1;
+    padding-left: 2rem;
+    transition: color .5s;
+}
+
+.safari .btn--cta {
+    -webkit-mask-image: radial-gradient(#fff, #000);
+    mask-image: radial-gradient(#fff, #000)
+}
+
+.macOS.chrome .btn--cta,
+.safari .btn--cta {
+    line-height: 4.7rem
+}
+
+.btn-cta:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    z-index: 1;
+    width: 3.6rem;
+    height: 3.6rem;
+    background: #00D084;
+    border-radius: 1.8rem;
+    transform: translate3d(0, -50%, 0);
+    transition: .5s cubic-bezier(.645, .045, .355, 1)
+}
+
+.btn-cta:after {
+    content: "";
+    color: #5352ed;
+    position: absolute;
+    top: calc(50% - .6rem);
+    right: 1.4rem;
+    z-index: 1;
+    width: .7rem;
+    height: 1.1rem;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAhCAQAAACc9SimAAAAS0lEQVR42mNgIB38lydWYcz/X/9jiFMIATHEKiSkGEUhfsX/jf+/H1U8pBUnoSn9hSOJEm3qqEI6KyQpx5JQDpBUupBUZpFUEhIDANqO2qDxm8F1AAAAAElFTkSuQmCC") 50% 50%/.7rem 1.1rem no-repeat;
+    transition: transform .5s cubic-bezier(.645, .045, .355, 1)
+}
+
+.btn-cta span {
+    display: block;
+    position: relative;
+    z-index: 2;
+    transform: translateX(-2rem);
+    transition: transform .5s cubic-bezier(.645, .045, .355, 1)
+}
+
+.btn-cta:focus,
+.btn-cta:hover {
+    color: #fff
+}
+
+.btn-cta:focus:before,
+.btn-cta:hover:before {
+    width: 100%;
+    height: 100%;
+    border-radius: 2.6rem;
+    transition-timing-function: cubic-bezier(.215, .61, .355, 1)
+}
+
+.btn-cta:focus:after,
+.btn-cta:hover:after {
+    transform: translateX(3rem);
+    transition-timing-function: cubic-bezier(.215, .61, .355, 1)
+}
+
+.btn-cta:focus span,
+.btn-cta:hover span {
+    transform: none;
+    transition-timing-function: cubic-bezier(.215, .61, .355, 1)
+}
+
 /**Hero Main Elements**/
 #hero {
     display: grid;
-    background-color: #1e3799;
+    background-color: #5352ed;
 
 }
 
@@ -513,7 +635,7 @@ html.has-scroll-dragging {
 
 .dv-hero-keylines span {
     display: block;
-    line-height: 4.5rem;
+    line-height: 6.5rem;
     position: relative;
     margin-bottom: 10px;
 }
@@ -591,7 +713,7 @@ html.has-scroll-dragging {
 }
 
 .dv-hero-headline h4 {
-    font-family: "Galano Regular";
+    font-family: "Galano Medium";
     z-index: 10;
     opacity: 0;
     font-size: 1.825rem;
@@ -622,6 +744,7 @@ html.has-scroll-dragging {
         transform: translateY(0px);
         opacity: 1
     }
+
 }
 
 @-webkit-keyframes headingFall {
@@ -889,4 +1012,63 @@ html.has-scroll-dragging {
         }
 
     }
+}
+
+
+#about {
+    background-color: #5352ed;
+}
+
+#about .dv-hero {
+    height: 80vh;
+    grid-column: 2/10;
+    grid-row: 5/10;
+
+}
+
+#about .dv-heading {
+    line-height: 6.5rem;
+}
+
+#about .dv-hero__wrapper {
+    grid-column: 3/13;
+    grid-row: 5/10;
+}
+
+.dv-hero-heading__body {
+    display: flex;
+    position: static;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+#about .dv-hero-content__title {
+    margin: 0 15px;
+    color: #fff;
+    grid-column: 7/10;
+    grid-row: 7/12;
+}
+
+#about .highlight {
+    font-size: 3.0rem;
+    line-height: 2.5rem;
+}
+
+#about .dv-hero-content__story {
+    margin: 0 15px;
+    color: #fff;
+    grid-column: 7/11;
+    grid-row: 8/12;
+}
+
+#about .dv-hero-content__story p {
+    font-size: 1.325rem;
+}
+
+#about .btn-wrapper {
+    margin: 1.5rem 0 0 15px;
+    position: relative;
+    grid-column: 7/10;
+    grid-row: 12;
+
 }
