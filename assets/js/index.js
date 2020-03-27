@@ -12,32 +12,31 @@ $(document).ready(function () {
     /** Scroll Magic */
     var controller = new ScrollMagic.Controller();
 
-    var lineSlide = document.getElementsByClassName("dv-hero-keylines");
-    for (var i = 0; i < lineSlide.length; i++) { // create a scene for each element
+    var keylines = document.getElementsByClassName("dv-hero-keylines");
+    for (var i = 0; i < keylines.length; i++) { // create a scene for each element
         new ScrollMagic.Scene({
-            triggerElement: lineSlide[i], // y value not modified, so we can use element as trigger as well
+            triggerElement: keylines[i], // y value not modified, so we can use element as trigger as well
             offset: -150, // start a little later
             triggerHook: 0.9,
             duration: "150%"
 
         })
-            .setClassToggle(lineSlide[i], "animation-go") // add class toggle
+            .setClassToggle(keylines[i], "animation-kl") // add class toggle
             .addTo(controller);
     }
 
-    var lineSlide = document.getElementsByClassName("dv-hero-headline");
-    for (var i = 0; i < lineSlide.length; i++) { // create a scene for each element
+    var headline = document.getElementsByClassName("dv-hero-headline");
+    for (var i = 0; i < headline.length; i++) { // create a scene for each element
         new ScrollMagic.Scene({
-            triggerElement: lineSlide[i], // y value not modified, so we can use element as trigger as well
+            triggerElement: headline[i], // y value not modified, so we can use element as trigger as well
             offset: -0, // start a little later
             triggerHook: 0.9,
             duration: "100%"
 
         })
-            .setClassToggle(lineSlide[i], "animation-go") // add class toggle
+            .setClassToggle(headline[i], "animation-hf") // add class toggle
             .addTo(controller);
     }
-
 
 
     var lineSlide = document.getElementsByClassName("dv-block-line");
@@ -49,20 +48,22 @@ $(document).ready(function () {
             duration: "150%"
 
         })
-            .setClassToggle(lineSlide[i], "visible") // add class toggle
+            .setClassToggle(lineSlide[i], "animation-ls") // add class toggle
             .addTo(controller);
     }
 
-    var revealBlocks = document.getElementsByClassName("dv-clr-block__wrapper");
+    var revealBlocks = document.getElementsByClassName("bar");
     for (var i = 0; i < revealBlocks.length; i++) { // create a scene for each element
         new ScrollMagic.Scene({
             triggerElement: revealBlocks[i], // y value not modified, so we can use element as trigger as well
-            offset: -200, // start a little later
+            offset: -350, // start a little later
             triggerHook: 0.9,
         })
-            .setClassToggle(revealBlocks[i], "reveal") // add class toggle
+            .setClassToggle(revealBlocks[i], "animation-bars") // add class toggle
             .addTo(controller);
     }
+
+
 
     (function ($) {
 
